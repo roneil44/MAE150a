@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 
-
+####### P1
 x = np.linspace(0,1,100)
 y = np.linspace(0,1,100)
 constant = 4
@@ -14,13 +15,21 @@ v = (-constant)*Y
 u = constant*X
 
 psi = constant*np.multiply(X, Y)
-
 phi = constant/2*np.subtract(np.power(X,2), np.power(Y,2))
-
 pressures = .5*(np.add(np.power(u,2),np.power(v,2)))
+#########
 
+#### P3
+theta = np.linspace(0, math.pi, 100)
+Cp = []
+
+for angle in theta:
+    Cp.append(1-(4*(math.sin(angle))**2))
+######
+##### P4
+
+##### P1 Plotting
 levels = [0, .1, .25, .5, .75, 1, 1.5, 2, 2.5, 3, 3.5, 4]
-
 plt.figure(1)
 q = plt.quiver(X[::refine,::refine], Y[::refine,::refine], u[::refine,::refine], v[::refine,::refine], pivot='mid')
 plt.quiverkey(q, X=.5, Y=-.08, U=10, label='Flow Direction', labelpos='S')
@@ -45,4 +54,12 @@ plt.quiverkey(q, X=.5, Y=-.08, U=10, label='Flow Direction', labelpos='S')
 c = plt.contour(X,Y,pressures, levels=levels)
 plt.title("Pressure Contours")
 plt.contour
+########
+
+####### P3 Plotting
+plt.figure(4)
+plt.plot(theta, Cp)
+plt.title("Pressure Distribution on a Cylinder as a Function of Angle")
 plt.show()
+#######
+
