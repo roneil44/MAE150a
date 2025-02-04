@@ -79,7 +79,7 @@ plt.ylabel("Cp")
 ######## P4 Plotting
 plt.figure(5)
 plt.plot(theta4, Cp4)
-plt.title("Prob. 4c\ Pressure Distribution on a Lifting Cylinder as a Function of Angle")
+plt.title("Prob. 4c Pressure Distribution on a Lifting Cylinder as a Function of Angle")
 plt.xlabel('Radians')
 plt.ylabel("Cp")
 #########
